@@ -1,0 +1,24 @@
+{
+  "name": "solution-center-header",
+  "version": "0.0.8",
+  "authors": [
+    "cjhowald@gmail.com"
+  ],
+  "description": "",
+  "main": "dist/solution-center-header.js, dist/solution-center-header.js",
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1",
+    "angular": "~1.2.26",
+    "angular-sanitize": "~1.2.26",
+    "angular-mocks": "~1.2.26"
+  }
+}
