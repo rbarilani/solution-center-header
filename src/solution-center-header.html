@@ -1,8 +1,12 @@
-<header class="header">
+<header class="header" click-outside="headerCtrl.modulesMenuVisible=false; headerCtrl.brandSwitcherVisible=false;
+                                      headerCtrl.userMenuVisible=false">
+  <!-- LOGO -->
   <div class="logo-container">
     <img src="img/logo.svg" alt="Logo" class="logo logo--large"/>
     <img src="img/logo--no-text.svg" alt="Logo" class="logo logo--small">
   </div>
+    {{headerCtrl.test}}
+  <!-- PRODUCT MENU/SUBMENU -->
   <div class="menu-toggle" ng-click="headerCtrl.toggleMenu('modules')">
     <i class="dc-icon dc-icon--menu dc-icon--interactive"></i>
   </div>
@@ -14,38 +18,41 @@
       </li>
     </ul>
   </nav>
+  <!-- BRAND SWITCHER -->
   <a href ng-click="headerCtrl.toggleMenu('brand')" class="brand-switcher" title="Switch Brand">
     <span class="brand-switcher__brand-name">{{headerCtrl.brand.name}}</span>
   </a>
-  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.brandswitcherVisible"
-       ng-class="{shown: headerCtrl.brandswitcherVisible}">
+  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.brandSwitcherVisible"
+       ng-class="{shown: headerCtrl.brandSwitcherVisible}">
     <ul class="menu">
       <li class="menu__item">
-        <a ng-href="#/brands/{{headerCtrl.brand.id}}" class="menu__link">{{headerCtrl.brand.name}} Account</a>
+        <a ng-href="{{headerCtrl.SOLUTION_CENTER_URL}}#/brands/{{headerCtrl.brand.id}}" class="menu__link">
+            {{headerCtrl.brand.name}} Account
+        </a>
       </li>
       <li class="menu__item">
-        <a href="#/brands" class="menu__link">Switch Brand</a>
+        <a href="{{headerCtrl.SOLUTION_CENTER_URL}}#/brands" class="menu__link">Switch Brand</a>
       </li>
     </ul>
   </nav>
+  <!-- USER MENU -->
   <div class="toggle" ng-click="headerCtrl.toggleMenu('user')">
     <span class="user-name">{{headerCtrl.user.name}}</span>
     <i class="dc-icon dc-icon--user dc-icon--interactive"></i>
   </div>
-  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.usermenuVisible"
-       ng-class="{shown: headerCtrl.usermenuVisible}">
+  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.userMenuVisible"
+       ng-class="{shown: headerCtrl.userMenuVisible}">
     <ul class="menu">
       <li class="menu__item">
-        <a href="#/account" class="menu__link">My Account</a>
+        <a href="{{headerCtrl.SOLUTION_CENTER_URL}}#/account" class="menu__link">My Account</a>
       </li>
       <li class="menu__item">
         <a href ng-click="headerCtrl.logout()" class="menu__link">Logout</a>
       </li>
     </ul>
   </nav>
-  <app-messages class="bsMessages"></app-messages>
-  <div class="dc-btn-dropdown" click-outside="headerCtrl.helpWidgetVisible=false"
-       is-active="headerCtrl.helpWidgetVisible">
+  <!-- HELP -->
+  <div class="dc-btn-dropdown" data-click-outside="headerCtrl.helpWidgetVisible=false">
     <div href class="toggle" ng-click="headerCtrl.helpWidgetVisible=!headerCtrl.helpWidgetVisible">
       <i class="dc-icon dc-icon--help dc-icon--interactive"></i>
     </div>

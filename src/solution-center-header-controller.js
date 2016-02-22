@@ -6,71 +6,28 @@ angular.module('solutionCenter')
 
       var vm = this;
 
+
+
       // TODO: remove this
       vm.user = { name: 'Colin Howald' };
-      vm.modules = [
-        {
-          "id": 1,
-          "name": "CMS",
-          "url": "https://frontend-stage.codebrewers.zalan.do",
-          "icon": "https://s3-eu-west-1.amazonaws.com/solution-center-cdn/module-icons/icon-cms.svg"
-        },
-        {
-          "id": 2,
-          "name": "Analytics",
-          "url": "https://insights-frontend-test.adventure.zalan.do",
-          "icon": "https://s3-eu-west-1.amazonaws.com/solution-center-cdn/module-icons/icon-analytics.svg"
-        },
-        {
-          "id": 3,
-          "name": "Users",
-          "url": "#/",
-          "icon": "https://s3-eu-west-1.amazonaws.com/solution-center-cdn/module-icons/icon-users.svg"
-        },
-        {
-          "id": 5,
-          "name": "ZMS",
-          "url": "zms",
-          "icon": "https://s3-eu-west-1.amazonaws.com/solution-center-cdn/module-icons/icon-zms.svg"
-        }
-      ];
-      vm.brand = { name: "Hugo Boss", id: 1 };
+      //vm.brand;
+
+      vm.SOLUTION_CENTER_URL = "https://solutions.zalando.com/";
 
 
-
-
-      vm.PRODUCT_GENERAL = 'General';
+      vm.HELP_PRODUCT_GENERAL = 'General';
+      vm.test = "testing";
 
       //vm.user = security.user();
-      vm.brandswitcherVisible = false;
-      vm.usermenuVisible = false;
+      vm.brandSwitcherVisible = false;
+      vm.userMenuVisible = false;
       vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
 
       //vm.modules = '';
 
-      //vm.session = session;
+      //vm.modules = vm.data.modules;
 
-      //modulesService.getModules()
-      //  .then(function (response) {
-      //      vm.modules = response.data;
-      //    },
-      //    function () {
-      //      vm.modules = [];
-      //    })
-      //  .then(function() {
-      //    nanorepService.loadHelpWidget(vm.modules);
-      //  });
-
-      //if ($routeParams.extId) {
-      //  brandService.getMerchant($routeParams.extId)
-      //    .then(function (response) {
-      //      vm.brand = response.data;
-      //      if (window.innerWidth > 480) {
-      //        vm.modulesVisible = true;
-      //      }
-      //    });
-      //}
 
       vm.logout = function () {
         //security.logout();
@@ -78,19 +35,19 @@ angular.module('solutionCenter')
 
       vm.toggleMenu = function (menuToToggle) {
         if (menuToToggle === 'brand') {
-          vm.brandswitcherVisible = !vm.brandswitcherVisible;
-          vm.usermenuVisible = false;
+          vm.brandSwitcherVisible = !vm.brandSwitcherVisible;
+          vm.userMenuVisible = false;
           vm.modulesMenuVisible = false;
         }
         else if (menuToToggle === 'user') {
-          vm.usermenuVisible = !vm.usermenuVisible;
-          vm.brandswitcherVisible = false;
+          vm.userMenuVisible = !vm.userMenuVisible;
+          vm.brandSwitcherVisible = false;
           vm.modulesMenuVisible = false;
         }
         else if (menuToToggle === 'modules') {
           vm.modulesMenuVisible = !vm.modulesMenuVisible;
-          vm.usermenuVisible = false;
-          vm.brandswitcherVisible = false;
+          vm.userMenuVisible = false;
+          vm.brandSwitcherVisible = false;
         }
       };
 
@@ -137,7 +94,7 @@ angular.module('solutionCenter')
       };
 
       var calcProducts = function (modules) {
-        var products = [vm.PRODUCT_GENERAL];
+        var products = [vm.HELP_PRODUCT_GENERAL];
         angular.forEach(modules, function(module) {
           if (module.name) {
             products.push(module.name);

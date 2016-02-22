@@ -14,8 +14,9 @@
     <link rel="stylesheet" href="../dist/solution-center-header.css">
     <link rel="stylesheet" href="demo.css">
   </head>
-  <body class="dc-body">
-    <solution-center-header></solution-center-header>
+  <body class="dc-body" ng-controller="demoController as demo">
+    <solution-center-header brand="demo.brand" test="test"></solution-center-header>
+    {{ demo.brand }}
     <div class="container">
       <h1 class="text-muted">Demo</h1>
 
