@@ -44,7 +44,7 @@ angular.module('solutionCenter')
       //vm.user = security.user();
       vm.brandswitcherVisible = false;
       vm.usermenuVisible = false;
-      vm.modulesMenuVisible = true;
+      vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
 
       //vm.modules = '';

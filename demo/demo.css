@@ -20,7 +20,7 @@ html {
 [x-ng-cloak],
 .ng-cloak,
 .x-ng-cloak {
-  display: none !important;
+  /*display: none !important;*/
 }
 * {
   box-sizing: border-box;
@@ -31,8 +31,8 @@ html {
 }
 body {
   /* required for animation on navigation to work */
-  position: relative;
-  z-index: -1;
+  /*position: relative;*/
+  /*z-index: -1;*/
   /* fix ends here */
   /*background: $dc-bodyBackgroundColor;*/
   /*color: $textColor;*/
