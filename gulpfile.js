@@ -12,12 +12,11 @@ var uglify = require('gulp-uglify');
 var minifyHtml = require('gulp-minify-html');
 var minifyCSS = require('gulp-minify-css');
 var templateCache = require('gulp-angular-templatecache');
-var gutil = require('gulp-util');
 var plumber = require('gulp-plumber');
 var open = require('gulp-open');
-var less = require('gulp-less');
+var sass = require('gulp-sass');
 var order = require("gulp-order");
-
+var flatten = require("gulp-flatten");
 
 var config = {
   pkg : JSON.parse(fs.readFileSync('./package.json')),
@@ -44,7 +43,7 @@ gulp.task('html', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['./demo/**/*.html'], ['html']);
-  gulp.watch(['./**/*.less'], ['build']);
+  gulp.watch(['./**/*.scss'], ['build']);
   gulp.watch(['./src/**/*.js','./demo/**/*.js', './**/*.html'], ['build']);
 });
 
@@ -65,7 +64,7 @@ gulp.task('scripts', ['clean'] , function() {
   };
 
   function buildDistJS(){
-    return gulp.src('src/solution-center-header.js')
+    return gulp.src('src/*.js')
       .pipe(plumber({
         errorHandler: handleError
       }))
@@ -96,8 +95,8 @@ gulp.task('scripts', ['clean'] , function() {
 
 gulp.task('styles', ['clean'], function() {
 
-  return gulp.src('src/solution-center-header.less')
-    .pipe(less())
+  return gulp.src('src/*.scss')
+    .pipe(sass().on('error', sass.logError))
     .pipe(header(config.banner, {
       timestamp: (new Date()).toISOString(), pkg: config.pkg
     }))
@@ -105,6 +104,19 @@ gulp.task('styles', ['clean'], function() {
     .pipe(minifyCSS())
     .pipe(rename({suffix: '.min.css'}))
     .pipe(gulp.dest('dist'))
+    .pipe(connect.reload());
+});
+
+gulp.task('images', ['clean'], function () {
+  return gulp.src('src/img/*')
+    .pipe(gulp.dest('dist/img/'))
+    .pipe(connect.reload());
+});
+
+gulp.task('fonts', ['clean'], function () {
+  return gulp.src('bower_components/dress-code/**/*.{eot,ttf,woff}')
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/fonts/'))
     .pipe(connect.reload());
 });
 
@@ -135,7 +147,7 @@ function handleError(err) {
   this.emit('end');
 };
 
-gulp.task('build', ['clean', 'scripts', 'styles']);
+gulp.task('build', ['clean', 'scripts', 'styles', 'fonts', 'images']);
 gulp.task('serve', ['build', 'connect', 'watch', 'open']);
 gulp.task('default', ['build', 'test']);
 gulp.task('test', ['build', 'jshint-test', 'karma']);

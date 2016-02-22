@@ -1,4 +1,57 @@
-<div class="solution-center-header">
-  <div>Counter: {{getValue()}}</div>
-  <button ng-click="increment()">+</button>
-</div>
+<header class="header">
+  <div class="logo-container">
+    <img src="img/logo.svg" alt="Logo" class="logo logo--large"/>
+    <img src="img/logo--no-text.svg" alt="Logo" class="logo logo--small">
+  </div>
+  <div class="menu-toggle" ng-click="headerCtrl.toggleMenu('modules')">
+    <i class="dc-icon dc-icon--menu dc-icon--interactive"></i>
+  </div>
+  <nav class="navigation navigation--global navigation--sub navigation--left"
+       ng-class="{'shown-mobile': headerCtrl.modulesMenuVisible}">
+    <ul class="menu">
+      <li class="menu__item" ng-repeat="module in headerCtrl.modules">
+        <a ng-href="{{module.url}}" class="menu__link">{{module.name}}</a>
+      </li>
+    </ul>
+  </nav>
+  <a href ng-click="headerCtrl.toggleMenu('brand')" class="brand-switcher" title="Switch Brand">
+    <span class="brand-switcher__brand-name">{{headerCtrl.brand.name}}</span>
+  </a>
+  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.brandswitcherVisible"
+       ng-class="{shown: headerCtrl.brandswitcherVisible}">
+    <ul class="menu">
+      <li class="menu__item">
+        <a ng-href="#/brands/{{headerCtrl.brand.id}}" class="menu__link">{{headerCtrl.brand.name}} Account</a>
+      </li>
+      <li class="menu__item">
+        <a href="#/brands" class="menu__link">Switch Brand</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="toggle" ng-click="headerCtrl.toggleMenu('user')">
+    <span class="user-name">{{headerCtrl.user.name}}</span>
+    <i class="dc-icon dc-icon--user dc-icon--interactive"></i>
+  </div>
+  <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.usermenuVisible"
+       ng-class="{shown: headerCtrl.usermenuVisible}">
+    <ul class="menu">
+      <li class="menu__item">
+        <a href="#/account" class="menu__link">My Account</a>
+      </li>
+      <li class="menu__item">
+        <a href ng-click="headerCtrl.logout()" class="menu__link">Logout</a>
+      </li>
+    </ul>
+  </nav>
+  <app-messages class="bsMessages"></app-messages>
+  <div class="dc-btn-dropdown" click-outside="headerCtrl.helpWidgetVisible=false"
+       is-active="headerCtrl.helpWidgetVisible">
+    <div href class="toggle" ng-click="headerCtrl.helpWidgetVisible=!headerCtrl.helpWidgetVisible">
+      <i class="dc-icon dc-icon--help dc-icon--interactive"></i>
+    </div>
+    <div aria-live='polite' id='nanoRepEmbedContainer' class="dc-btn-dropdown__list dc-btn-dropdown__list--down help-widget"
+         ng-class="{ 'visible': headerCtrl.helpWidgetVisible }">
+      <i class="dc-icon dc-icon--close dc-icon--interactive" ng-click="headerCtrl.helpWidgetVisible=false"></i>
+    </div>
+  </div>
+</header>

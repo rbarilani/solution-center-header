@@ -20,5 +20,8 @@
     "angular": "~1.2.26",
     "angular-sanitize": "~1.2.26",
     "angular-mocks": "~1.2.26"
+  },
+  "dependencies": {
+    "dress-code": "https://github.com/zalando/dress-code-bower.git#~1.1.0-alpha"
   }
 }

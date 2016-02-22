@@ -17,6 +17,8 @@
   "undef": true,
   "indent": 2,
   "globals": {
-    "angular": true
+    "angular": true,
+    "window": true,
+    "document": true
   }
 }

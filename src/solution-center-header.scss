@@ -1,0 +1,220 @@
+@import "../bower_components/dress-code/sass/dress-code";
+$dc-font-path: "fonts";
+@include dc-everything;
+
+//  ---------------------------------------------------------------------------
+//
+//  Solution Center Header Styles
+//
+//  ---------------------------------------------------------------------------
+
+
+
+.header {
+  font-family: Ubuntu, Helvetica, sans-serif;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  height: $dc-touch-size;
+  padding: $dc-space75 $dc-space100;
+  border-bottom: 1px solid $dc-gray60;
+  background: $dc-white;
+  z-index: 900;
+  position: relative;
+
+  .logo-container {
+    max-height: 2rem;
+  }
+
+  .logo {
+    max-height: $dc-touch-size - $dc-space150;
+    padding-bottom: 2px;
+
+    ~ * {
+      margin-left: $dc-space150;
+    }
+
+    &--large {
+      max-width: 90px;
+      @media (max-width: $dc-medium-width) {
+        display: none;
+      }
+    }
+    &--small {
+      margin-left: 0;
+      display: none;
+      @media (max-width: $dc-medium-width) {
+        display: block;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    @media (max-width: $dc-medium-width) {
+      display: block;
+    }
+    .dc-icon {
+      font-size: 1.6rem;
+      margin-left: 4px;
+    }
+  }
+
+  .dc-icon {
+    font-size: 2.4rem;
+    width: 36px;
+    color: $dc-gray40;
+
+    &--interactive:hover {
+      color: $dc-orange40;
+    }
+  }
+  a {
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      color: $dc-link-color-hover;
+      outline: none;
+    }
+  }
+}
+
+.brand-switcher {
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  text-align: center;
+  @media (min-width: $dc-medium-width) {
+    text-align: right;
+    margin: 0 $dc-space200 0 auto;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+  }
+  &__brand-name {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $dc-text-color;
+  }
+}
+
+.navigation {
+  &--sub {
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: $dc-white;
+    border-top: 1px solid $dc-gray60;
+    border-bottom: 1px solid $dc-gray60;
+    @media (min-width: $dc-medium-width) {
+      z-index: auto;
+    }
+  }
+  &--right {
+    justify-content: flex-end;
+    &.shown {
+      & .menu__item {
+        transform: translateX(0);
+      }
+    }
+    & .menu__item {
+      transform: translateX(200%);
+      transition: transform 0.1s 0.075s ease-out;
+      &:nth-child(n+1) {
+        transition: transform 0.1s 0.175s ease-out;
+      }
+      &:nth-child(n+2) {
+        transition: transform 0.1s 0.275s ease-out;
+      }
+    }
+  }
+  &--left {
+    &.shown-mobile {
+      & .menu__item {
+        transform: translateX(0);
+      }
+    }
+    & .menu__item {
+      transform: translateX(-200%);
+      transition: transform 0.1s 0.275s ease-out;
+      &:nth-child(n+1) {
+        transition: transform 0.1s 0.175s ease-out;
+      }
+      &:nth-child(n+2) {
+        transition: transform 0.1s 0.075s ease-out;
+      }
+    }
+  }
+  &--global {
+    @media (min-width: $dc-medium-width) {
+      position: static;
+      border: none;
+      width: auto;
+      display: block;
+    }
+    &.shown-mobile {
+      display: flex;
+    }
+  }
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 $dc-space100 0 0;
+  display: flex;
+  &__link {
+    margin-left: $dc-space150;
+    color: $dc-text-color;
+    line-height: 36px;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.toggle {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;display: -webkit-flex;
+  display: flex;
+  color: $dc-text-color;
+  text-align: center;
+  &:hover, &:hover .dc-icon {
+    color: $dc-secondary-accent;
+    cursor: pointer;
+    [stroke^='#'] {
+      stroke: $dc-secondary-accent;
+    }
+  }
+  .user-name {
+    @media (max-width: $dc-medium-width) {
+      display: none;
+    }
+  }
+}
+
+#nanoRepEmbedContainer {
+  right: -9px;
+  padding: 0;
+  margin-top: 2px;
+  &::after {
+    left: initial;
+    right: 21px;
+    margin-bottom: -1px;
+    border: 6px solid transparent;
+    border-bottom-color: $dc-gray10;
+  }
+  &.visible {
+    display: block;
+  }
+  .dc-icon--close {
+    color: $dc-gray40;
+    position: absolute;
+    right: 9px;
+    top: 5px;
+    font-size: 1.4rem;
+    width: inherit;
+  }
+}

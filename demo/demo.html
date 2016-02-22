@@ -7,21 +7,22 @@
     <!-- TODO: Include Angular from Bower components -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500'>
+    <link href="../bower_components/dress-code/css/dress-code.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">-->
 
     <link rel="stylesheet" href="../dist/solution-center-header.css">
     <link rel="stylesheet" href="demo.css">
   </head>
-  <body>
+  <body class="dc-body">
+    <solution-center-header></solution-center-header>
     <div class="container">
       <h1 class="text-muted">Demo</h1>
 
       <div class="usage row">
         <h4>Simple usage</h4>
-        <p>This is a simple usage of cjhowald.sc-header-directive</p>
-        <pre>&lt;sc-header-directive&gt;&lt;/sc-header-directive&gt;</pre>
-        <h4>Results</h4>
-        <solution-center-header></solution-center-header>
+        <p>This is a simple usage of the solution center header. The following directive is added at the top of the page:</p>
+        <pre>&lt;solution-center-header&gt;&lt;/solution-center-header&gt;</pre>
       </div>
     </div>
 
