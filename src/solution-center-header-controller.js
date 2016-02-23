@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('solutionCenterHeaderController', [
+  .controller('SolutionCenterHeaderController', [
     function() {
 
       var vm = this;
@@ -16,7 +16,6 @@ angular.module('solutionCenter')
 
 
       vm.HELP_PRODUCT_GENERAL = 'General';
-      vm.test = "testing";
 
       //vm.user = security.user();
       vm.brandSwitcherVisible = false;

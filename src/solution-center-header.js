@@ -3,13 +3,12 @@
 angular.module('solutionCenter', []).directive('solutionCenterHeader', function () {
   return {
     scope: {
-      brand: '=',
-      test: '@'
+      brand: '='
     },
-    bindToController: true,
     restrict: 'E',
     templateUrl: 'solution-center-header.html',
-    controller: 'solutionCenterHeaderController',
-    controllerAs: 'headerCtrl'
+    controller: 'SolutionCenterHeaderController',
+    controllerAs: 'headerCtrl',
+    bindToController: true
   };
 });

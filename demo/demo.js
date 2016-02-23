@@ -1,4 +1,4 @@
-var app = angular.module('demo', ['ngSanitize', 'solutionCenter']).controller('demoController', [
+var app = angular.module('demo', ['solutionCenter']).controller('demoController', [
   function() {
     this.brand = { name: "Lacoste", id: 19 };
     //this.data = { modules: [
