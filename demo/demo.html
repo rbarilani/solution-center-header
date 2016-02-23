@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="demo.css">
   </head>
   <body class="dc-body" ng-controller="demoController as demo">
-    <solution-center-header brand="demo.brand"></solution-center-header>
+    <solution-center-header brand="demo.brand" user="demo.user" modules="demo.modules" logout="demo.logout()">
+    </solution-center-header>
     <div class="container">
       <h1 class="text-muted">Demo</h1>
 

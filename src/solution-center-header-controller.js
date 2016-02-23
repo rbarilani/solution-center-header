@@ -9,28 +9,14 @@ angular.module('solutionCenter')
 
 
       // TODO: remove this
-      vm.user = { name: 'Colin Howald' };
-      //vm.brand;
-
       vm.SOLUTION_CENTER_URL = "https://solutions.zalando.com/";
 
 
       vm.HELP_PRODUCT_GENERAL = 'General';
-
-      //vm.user = security.user();
       vm.brandSwitcherVisible = false;
       vm.userMenuVisible = false;
       vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
-
-      //vm.modules = '';
-
-      //vm.modules = vm.data.modules;
-
-
-      vm.logout = function () {
-        //security.logout();
-      };
 
       vm.toggleMenu = function (menuToToggle) {
         if (menuToToggle === 'brand') {
@@ -52,7 +38,7 @@ angular.module('solutionCenter')
 
       var loadHelpWidget = function(modules) {
         // NANOREP EMBEDDED WIDGET -- DO NOT MODIFY CODE (except API section)
-        // generated at my.nanorep.com > gear > widget > embedded widget > get the code
+        // generated at my.nanorep.com > Guided Journeys > Touchpoints > Embedded Widget > get the code
         var _nRepData = window._nRepData || [];
         _nRepData['kb'] = '70732382';
         // API Start

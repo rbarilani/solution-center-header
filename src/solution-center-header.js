@@ -3,7 +3,10 @@
 angular.module('solutionCenter', []).directive('solutionCenterHeader', function () {
   return {
     scope: {
-      brand: '='
+      brand: '=',
+      user: '=',
+      modules: '=',
+      logout: '&'
     },
     restrict: 'E',
     templateUrl: 'solution-center-header.html',
