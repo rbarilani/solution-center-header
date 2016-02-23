@@ -17,6 +17,7 @@ var open = require('gulp-open');
 var sass = require('gulp-sass');
 var order = require("gulp-order");
 var flatten = require("gulp-flatten");
+var html2js = require('gulp-html2js');
 
 var config = {
   pkg : JSON.parse(fs.readFileSync('./package.json')),
@@ -51,7 +52,7 @@ gulp.task('clean', function(cb) {
   del(['dist'], cb);
 });
 
-gulp.task('scripts', ['clean'] , function() {
+gulp.task('scripts', function() {
 
   function buildTemplates() {
     return gulp.src('src/**/*.html')
@@ -86,14 +87,14 @@ gulp.task('scripts', ['clean'] , function() {
       timestamp: (new Date()).toISOString(), pkg: config.pkg
     }))
     .pipe(gulp.dest('dist'))
-    .pipe(rename({suffix: '.min.js'}))
+    .pipe(rename({suffix: '.min'}))
     .pipe(uglify({preserveComments: 'some'}))
     .pipe(gulp.dest('./dist'))
     .pipe(connect.reload());
 });
 
 
-gulp.task('styles', ['clean'], function() {
+gulp.task('styles', function() {
 
   return gulp.src('src/*.scss')
     .pipe(sass().on('error', sass.logError))
@@ -102,18 +103,18 @@ gulp.task('styles', ['clean'], function() {
     }))
     .pipe(gulp.dest('dist'))
     .pipe(minifyCSS())
-    .pipe(rename({suffix: '.min.css'}))
+    .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
 });
 
-gulp.task('images', ['clean'], function () {
+gulp.task('images', function () {
   return gulp.src('src/img/*')
     .pipe(gulp.dest('dist/img/'))
     .pipe(connect.reload());
 });
 
-gulp.task('fonts', ['clean'], function () {
+gulp.task('fonts', function () {
   return gulp.src('bower_components/dress-code/**/*.{eot,ttf,woff}')
     .pipe(flatten())
     .pipe(gulp.dest('dist/fonts/'))
@@ -129,7 +130,7 @@ gulp.task('jshint-test', function(){
   return gulp.src('./test/**/*.js').pipe(jshint());
 })
 
-gulp.task('karma', ['build'], function (done) {
+gulp.task('karma', ['build', 'html2js'], function (done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
@@ -142,12 +143,22 @@ gulp.task('karma-serve', ['build'], function(done){
   }, done);
 });
 
+
+gulp.task('html2js', function () {
+  gulp.src('src/*.html')
+    .pipe(html2js('angular.js', {
+      adapter: 'angular',
+      name: 'angular-demo'
+    }))
+    .pipe(gulp.dest('dist/'));
+});
+
 function handleError(err) {
   console.log(err.toString());
   this.emit('end');
 };
 
-gulp.task('build', ['clean', 'scripts', 'styles', 'fonts', 'images']);
+gulp.task('build', ['scripts', 'styles', 'fonts', 'images']);
 gulp.task('serve', ['build', 'connect', 'watch', 'open']);
 gulp.task('default', ['build', 'test']);
 gulp.task('test', ['build', 'jshint-test', 'karma']);
