@@ -1,7 +1,7 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.0.1 - 2016-02-24T13:02:12.627Z
+ * Version: 0.0.1 - 2016-02-24T15:53:09.196Z
  * License: MIT
  */
 
@@ -1811,17 +1811,24 @@ th {
     .header .logo ~ * {
       margin-left: 2.4rem; }
     .header .logo--large {
-      max-width: 90px; }
+      background: url("img/logo.svg") no-repeat;
+      background-size: contain;
+      height: 18px;
+      width: 90px; }
       @media (max-width: 30em) {
         .header .logo--large {
           display: none; } }
     .header .logo--small {
+      height: 1.4rem;
+      width: 1.4rem;
+      background: url("img/logo--no-text.svg") no-repeat;
       margin-left: 0;
       display: none; }
       @media (max-width: 30em) {
         .header .logo--small {
           display: block; } }
   .header .menu-toggle {
+    margin-top: 4px;
     display: none; }
     @media (max-width: 30em) {
       .header .menu-toggle {
