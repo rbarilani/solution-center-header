@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="demo">
+<html ng-app="demo" class="dc-html">
   <head>
     <meta charset="utf-8">
     <title>AngularJS directive demo</title>
@@ -13,13 +13,13 @@
   <body class="dc-body" ng-controller="demoController as demo">
     <solution-center-header brand="demo.brand" user="demo.user" modules="demo.modules" logout="demo.logout()">
     </solution-center-header>
-    <div class="container">
+    <div>
       <h1 class="text-muted">Demo</h1>
 
       <div class="usage row">
         <h4>Simple usage</h4>
         <p>This is a simple usage of the solution center header. The following directive is added at the top of the page:</p>
-        <pre>&lt;solution-center-header&gt;&lt;/solution-center-header&gt;</pre>
+        <pre>&lt;solution-center-header brand=&quot;demo.brand&quot; user=&quot;demo.user&quot; modules=&quot;demo.modules&quot; logout=&quot;demo.logout()&quot;&gt;&lt;/solution-center-header&gt;</pre>
       </div>
     </div>
 
