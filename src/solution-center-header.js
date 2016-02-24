@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('solutionCenter', []).directive('solutionCenterHeader', function () {
+angular.module('solutionCenter', []).directive('solutionCenterHeader', function ($templateCache) {
   return {
     scope: {
       brand: '=',
@@ -9,7 +9,7 @@ angular.module('solutionCenter', []).directive('solutionCenterHeader', function 
       logout: '&'
     },
     restrict: 'E',
-    templateUrl: 'solution-center-header.html',
+    template: $templateCache.get('solution-center-header.html'),
     controller: 'SolutionCenterHeaderController',
     controllerAs: 'headerCtrl',
     bindToController: true
