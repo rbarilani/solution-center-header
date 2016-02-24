@@ -19,7 +19,19 @@
     "bower_components",
     "test",
     "tests",
-    "demo"
+    "demo",
+    "src",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    ".travis.yml",
+    ".npmignore",
+    "karma.conf.js",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "README.md"
   ],
   "devDependencies": {
     "jquery": "~2.1.1",
