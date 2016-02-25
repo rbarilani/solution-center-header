@@ -78,9 +78,11 @@ Follow these steps to ensure you are using the right style for the header:
 
  1. Follow the [usage instructions for the dress code](https://github.com/zalando/dress-code#usage). 
  2. Load the header styles. Add this to your `<head>`:
- ```<link rel="stylesheet" href="../node_modules/solution-center-header/dist/solution-center header.css">```
- Or for NPM:
- ```<link rel="stylesheet" href="../bower_components/solution-center-header/dist/solution-center header.css">```
+    ```<link rel="stylesheet" href="../bower_components/solution-center-header/dist/solution-center header.css">```
+    Or for NPM:
+    ```<link rel="stylesheet" href="../node_modules/solution-center-header/dist/solution-center header.css">```
+ 3. For sizing, be sure the header is inside a `<body>` with class `dc-body`, and your `<html>` has class `dc-html`. 
+
  
 	 
 
