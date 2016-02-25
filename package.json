@@ -1,12 +1,10 @@
 {
-  "author": {
-    "name": "Colin Howald"
-  },
+  "author": "Colin Howald <colin.howald@zalando.de>",
   "bugs": {
     "url": "https://github.com/zalando/solution-center-header/issues"
   },
   "dependencies": {},
-  "description": "Zalando Solution Center Reusable Header",
+  "description": "Reusable header for the Zalando Solution Center",
   "devDependencies": {
     "del": "^0.1.3",
     "event-stream": "^3.1.7",
@@ -44,14 +42,13 @@
     "directive",
     "solution",
     "center",
-    "zalando"
+    "zalando",
+    "brand",
+    "solutions"
   ],
   "license": "MIT",
   "maintainers": [
-    {
-      "name": "Colin Howald",
-      "email": "cjhowald@gmail.com"
-    }
+    "Colin Howald <colin.howald@zalando.de>"
   ],
   "name": "solution-center-header",
   "optionalDependencies": {},
@@ -59,8 +56,11 @@
     "type": "git",
     "url": "https://github.com/zalando/solution-center-header.git"
   },
+  "main": [
+    "dist/solution-center-header.js"
+  ],
   "scripts": {
     "test": "./node_modules/gulp/bin/gulp.js test"
   },
-  "version": "0.0.1"
+  "version": "0.1.0"
 }

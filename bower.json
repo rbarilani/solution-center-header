@@ -5,8 +5,7 @@
   ],
   "description": "Reusable header for the Zalando Solution Center",
   "main": [
-    "dist/solution-center-header.js",
-    "dist/solution-center-header.css"
+    "dist/solution-center-header.js"
   ],
   "repository": {
     "type": "git",
@@ -30,8 +29,7 @@
     "karma.conf.js",
     "bower.json",
     "gulpfile.js",
-    "package.json",
-    "README.md"
+    "package.json"
   ],
   "devDependencies": {
     "jquery": "~2.1.1",
