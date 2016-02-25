@@ -3,7 +3,10 @@
   "bugs": {
     "url": "https://github.com/zalando/solution-center-header/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dress-code": "https://github.com/zalando/dress-code-bower.git#~1.1.0-alpha",
+    "angular": "~1.5.0",
+  },
   "description": "Reusable header for the Zalando Solution Center",
   "devDependencies": {
     "del": "^0.1.3",
