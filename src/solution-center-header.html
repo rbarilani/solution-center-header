@@ -2,8 +2,8 @@
                                       headerCtrl.userMenuVisible=false">
   <!-- LOGO -->
   <div class="logo-container">
-    <div alt="Logo" class="logo logo--large"></div>
-    <div alt="Logo" class="logo logo--small"></div>
+    <div title="Logo" class="logo logo--large"></div>
+    <div title="Logo" class="logo logo--small"></div>
   </div>
   <!-- PRODUCT MENU/SUBMENU -->
   <div class="menu-toggle" ng-click="headerCtrl.toggleMenu('modules')" ng-if="headerCtrl.modules">
@@ -35,7 +35,7 @@
     </ul>
   </nav>
   <!-- USER MENU -->
-  <div class="toggle" ng-click="headerCtrl.toggleMenu('user')" ng-if="headerCtrl.user.name">
+  <div class="toggle" ng-click="headerCtrl.toggleMenu('user')" ng-if="headerCtrl.user.name" title="User Account">
     <span class="user-name">{{headerCtrl.user.name}}</span>
     <i class="dc-icon dc-icon--user dc-icon--interactive"></i>
   </div>
