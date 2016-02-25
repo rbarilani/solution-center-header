@@ -70,6 +70,20 @@ All parameters are optional. The Zalando logo and the help widget always appear.
 
     ```solution-center-url = "https://www.example.com/```
 
+### Style
+
+The solution center header is intended to be used with the [dress code](https://github.com/zalando/dress-code) style. That package is included as a dependency.
+
+Follow these steps to ensure you are using the right style for the header:
+
+ 1. Follow the [usage instructions for the dress code](https://github.com/zalando/dress-code#usage). 
+ 2. Load the header styles. Add this to your `<head>`:
+ ```<link rel="stylesheet" href="../node_modules/solution-center-header/dist/solution-center header.css">```
+ Or for NPM:
+ ```<link rel="stylesheet" href="../bower_components/solution-center-header/dist/solution-center header.css">```
+ 
+	 
+
 ### Demo
 
 See the `demo` folder. To run the demo locally, follow the Develop instructions below.

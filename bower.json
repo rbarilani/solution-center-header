@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "angular": "~1.5.0",
-    "dress-code": "https://github.com/zalando/dress-code-bower.git#~1.1.0-alpha"
+    "dress-code": "https://github.com/zalando/dress-code-bower.git"
   }
 }
