@@ -6,7 +6,8 @@ angular.module('solutionCenter', []).directive('solutionCenterHeader', function 
       brand: '=',
       user: '=',
       modules: '=',
-      logout: '&'
+      logout: '&',
+      solutionCenterUrl: '@'
     },
     restrict: 'E',
     template: $templateCache.get('solution-center-header.html'),

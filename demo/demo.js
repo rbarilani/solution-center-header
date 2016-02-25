@@ -22,6 +22,7 @@ var app = angular.module('demo', ['solutionCenter']).controller('demoController'
         "icon": "https://s3-eu-west-1.amazonaws.com/solution-center-cdn/module-icons/icon-zms.svg"
       }
     ];
+    this.url = "/";
     this.logout = function() {
       console.log('logout clicked');
     }
