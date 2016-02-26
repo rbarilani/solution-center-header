@@ -5,7 +5,8 @@
   ],
   "description": "Reusable header for the Zalando Solution Center",
   "main": [
-    "dist/solution-center-header.js"
+    "dist/solution-center-header.js",
+    "dist/solution-center-header.css"
   ],
   "repository": {
     "type": "git",
