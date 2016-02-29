@@ -1,7 +1,7 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.1.3 - 2016-02-26T15:28:00.048Z
+ * Version: 0.1.3 - 2016-02-26T16:00:32.090Z
  * License: MIT
  */
 
@@ -66,7 +66,7 @@ angular.module('solutionCenter')
 
       var vm = this;
 
-      vm.SOLUTION_CENTER_URL = vm.solutionCenterUrl || "https://solutions.zalando.com/#/";
+      vm.SOLUTION_CENTER_URL = vm.solutionCenterUrl || "https://www.solutions.zalando.com/#/";
       vm.HELP_PRODUCT_GENERAL = 'General';
       vm.brandSwitcherVisible = false;
       vm.userMenuVisible = false;
