@@ -1,7 +1,7 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.1.3 - 2016-02-26T16:00:32.095Z
+ * Version: 0.1.4 - 2016-02-29T13:51:26.370Z
  * License: MIT
  */
 
@@ -14,7 +14,6 @@
   padding: 0.8rem 1.2rem;
   border-bottom: 1px solid #d1d1d1;
   background: #fff;
-  z-index: 900;
   position: relative; }
   .header .logo-container {
     max-height: 2rem; }

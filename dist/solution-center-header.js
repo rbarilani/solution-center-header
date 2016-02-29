@@ -1,7 +1,7 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.1.3 - 2016-02-26T16:00:32.090Z
+ * Version: 0.1.4 - 2016-02-29T13:51:26.355Z
  * License: MIT
  */
 
