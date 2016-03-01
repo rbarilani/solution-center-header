@@ -1,12 +1,12 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.2.0 - 2016-03-01T08:32:45.639Z
+ * Version: 0.2.0 - 2016-03-01T11:28:39.744Z
  * License: MIT
  */
 
 
-.header {
+.solution-center-header {
   display: flex;
   display: -webkit-flex;
   align-items: center;
@@ -15,65 +15,65 @@
   border-bottom: 1px solid #d1d1d1;
   background: #fff;
   position: relative; }
-  .header .logo-container {
+  .solution-center-header .logo-container {
     max-height: 2rem; }
-  .header .logo {
+  .solution-center-header .logo {
     max-height: 2rem;
     padding-bottom: 2px; }
-    .header .logo ~ * {
+    .solution-center-header .logo ~ * {
       margin-left: 2.4rem; }
-    .header .logo--large {
+    .solution-center-header .logo--large {
       background: url("img/logo.svg") no-repeat;
       background-size: contain;
       height: 1.8rem;
       width: 9rem; }
       @media (max-width: 30em) {
-        .header .logo--large {
+        .solution-center-header .logo--large {
           display: none; } }
-    .header .logo--small {
+    .solution-center-header .logo--small {
       height: 1.4rem;
       width: 1.4rem;
       background: url("img/logo--no-text.svg") no-repeat;
       margin-left: 0;
       display: none; }
       @media (max-width: 30em) {
-        .header .logo--small {
+        .solution-center-header .logo--small {
           display: block; } }
-  .header .menu-toggle {
+  .solution-center-header .menu-toggle {
     margin-top: 4px;
     display: none; }
     @media (max-width: 30em) {
-      .header .menu-toggle {
+      .solution-center-header .menu-toggle {
         display: block; } }
-    .header .menu-toggle .dc-icon {
+    .solution-center-header .menu-toggle .dc-icon {
       margin-left: 4px;
       vertical-align: middle; }
-  .header .dc-icon {
+  .solution-center-header .dc-icon {
     font-size: 2.4rem;
     width: 36px;
     color: #9b9b9b; }
-    .header .dc-icon--interactive:hover {
+    .solution-center-header .dc-icon--interactive:hover {
       color: #ff8e25; }
-  .header a {
+  .solution-center-header a {
     text-decoration: none; }
-    .header a:hover, .header a:focus {
+    .solution-center-header a:hover, .solution-center-header a:focus {
       color: #1e87cb;
       outline: none; }
-  .header .brand-switcher {
+  .solution-center-header .brand-switcher {
     -webkit-flex-grow: 1;
     flex-grow: 1;
     text-align: center; }
     @media (min-width: 30em) {
-      .header .brand-switcher {
+      .solution-center-header .brand-switcher {
         text-align: right;
         margin: 0 3.6rem 0 auto;
         -webkit-flex-grow: 0;
         flex-grow: 0; } }
-    .header .brand-switcher__brand-name {
+    .solution-center-header .brand-switcher__brand-name {
       text-transform: uppercase;
       font-weight: 500;
       color: #4a4a4a; }
-  .header .navigation--sub {
+  .solution-center-header .navigation--sub {
     display: -webkit-flex;
     display: flex;
     position: absolute;
@@ -84,82 +84,82 @@
     border-top: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1; }
     @media (min-width: 30em) {
-      .header .navigation--sub {
+      .solution-center-header .navigation--sub {
         z-index: auto; } }
-  .header .navigation--right {
+  .solution-center-header .navigation--right {
     justify-content: flex-end; }
-    .header .navigation--right.shown .menu__item {
+    .solution-center-header .navigation--right.shown .menu__item {
       transform: translateX(0); }
-    .header .navigation--right .menu__item {
+    .solution-center-header .navigation--right .menu__item {
       transform: translateX(200%);
       transition: transform 0.1s 0.075s ease-out; }
-      .header .navigation--right .menu__item:nth-child(n+1) {
+      .solution-center-header .navigation--right .menu__item:nth-child(n+1) {
         transition: transform 0.1s 0.175s ease-out; }
-      .header .navigation--right .menu__item:nth-child(n+2) {
+      .solution-center-header .navigation--right .menu__item:nth-child(n+2) {
         transition: transform 0.1s 0.275s ease-out; }
-  .header .navigation--left.shown-mobile .menu__item {
+  .solution-center-header .navigation--left.shown-mobile .menu__item {
     transform: translateX(0); }
-  .header .navigation--left .menu__item {
+  .solution-center-header .navigation--left .menu__item {
     transform: translateX(-200%);
     transition: transform 0.1s 0.275s ease-out; }
-    .header .navigation--left .menu__item:nth-child(n+1) {
+    .solution-center-header .navigation--left .menu__item:nth-child(n+1) {
       transition: transform 0.1s 0.175s ease-out; }
-    .header .navigation--left .menu__item:nth-child(n+2) {
+    .solution-center-header .navigation--left .menu__item:nth-child(n+2) {
       transition: transform 0.1s 0.075s ease-out; }
-  .header .navigation--global {
+  .solution-center-header .navigation--global {
     display: none; }
     @media (min-width: 30em) {
-      .header .navigation--global {
+      .solution-center-header .navigation--global {
         position: static;
         border: none;
         width: auto;
         display: block;
         transform: none; }
-        .header .navigation--global .menu__item {
+        .solution-center-header .navigation--global .menu__item {
           transform: none; } }
-    .header .navigation--global.shown-mobile {
+    .solution-center-header .navigation--global.shown-mobile {
       display: flex;
       display: -webkit-flex; }
-  .header .menu {
+  .solution-center-header .menu {
     list-style: none;
     padding: 0;
     margin: 0 1.2rem 0 0;
     display: flex;
     display: -webkit-flex; }
-    .header .menu__link {
+    .solution-center-header .menu__link {
       margin-left: 2.4rem;
       color: #4a4a4a;
       line-height: 3.6rem;
       display: block;
       cursor: pointer; }
-  .header .toggle {
+  .solution-center-header .toggle {
     -webkit-align-items: center;
     align-items: center;
     display: -webkit-flex;
     display: flex;
     color: #4a4a4a;
     text-align: center; }
-    .header .toggle:hover, .header .toggle:hover .dc-icon {
+    .solution-center-header .toggle:hover, .solution-center-header .toggle:hover .dc-icon {
       color: #ff8e25;
       cursor: pointer; }
-      .header .toggle:hover [stroke^='#'], .header .toggle:hover .dc-icon [stroke^='#'] {
+      .solution-center-header .toggle:hover [stroke^='#'], .solution-center-header .toggle:hover .dc-icon [stroke^='#'] {
         stroke: #ff8e25; }
     @media (max-width: 30em) {
-      .header .toggle .user-name {
+      .solution-center-header .toggle .user-name {
         display: none; } }
-  .header #nanoRepEmbedContainer {
+  .solution-center-header #nanoRepEmbedContainer {
     right: -9px;
     padding: 0;
     margin-top: 2px; }
-    .header #nanoRepEmbedContainer::after {
+    .solution-center-header #nanoRepEmbedContainer::after {
       left: initial;
       right: 21px;
       margin-bottom: -1px;
       border: 6px solid transparent;
       border-bottom-color: #4a4a4a; }
-    .header #nanoRepEmbedContainer.visible {
+    .solution-center-header #nanoRepEmbedContainer.visible {
       display: block; }
-    .header #nanoRepEmbedContainer .dc-icon--close {
+    .solution-center-header #nanoRepEmbedContainer .dc-icon--close {
       color: #9b9b9b;
       position: absolute;
       right: 9px;
