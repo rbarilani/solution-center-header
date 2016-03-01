@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('SolutionCenterHeaderController', [
-    function() {
+  .controller('SolutionCenterHeaderController', [ '$scope',
+    function($scope) {
 
       var vm = this;
 
@@ -12,6 +12,7 @@ angular.module('solutionCenter')
       vm.userMenuVisible = false;
       vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
+      vm.helpWidgetLoaded = false;
 
       vm.toggleMenu = function (menuToToggle) {
         if (menuToToggle === 'brand') {
@@ -71,6 +72,7 @@ angular.module('solutionCenter')
         })();
         // added this to generate code so we can run this outside the global scope
         window._nRepData = _nRepData;
+        vm.helpWidgetLoaded = true;
       };
 
       var calcProducts = function (modules) {
@@ -83,6 +85,20 @@ angular.module('solutionCenter')
         return products;
       };
 
-      loadHelpWidget(vm.modules);
+      if (!vm.modules) {
+        // if no modules provided, load the help widget with just default product
+        loadHelpWidget();
+      } else {
+        // otherwise, wait for modules to be populated then load the widget
+        $scope.$watch(
+          function () {
+            return vm.modules;
+          },
+          function () {
+            if (vm.modules && vm.modules.length > 0 && !vm.helpWidgetLoaded) {
+              loadHelpWidget(vm.modules);
+            }
+          });
+      }
     }
   ]);

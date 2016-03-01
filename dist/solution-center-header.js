@@ -1,7 +1,7 @@
 /*!
  * solution-center-header
  * https://github.com/zalando/solution-center-header
- * Version: 0.1.4 - 2016-02-29T13:51:26.355Z
+ * Version: 0.1.5 - 2016-03-01T08:29:38.545Z
  * License: MIT
  */
 
@@ -61,8 +61,8 @@ angular.module('solutionCenter').directive('clickOutside', ['$parse', '$document
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('SolutionCenterHeaderController', [
-    function() {
+  .controller('SolutionCenterHeaderController', [ '$scope',
+    function($scope) {
 
       var vm = this;
 
@@ -72,6 +72,7 @@ angular.module('solutionCenter')
       vm.userMenuVisible = false;
       vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
+      vm.helpWidgetLoaded = false;
 
       vm.toggleMenu = function (menuToToggle) {
         if (menuToToggle === 'brand') {
@@ -131,6 +132,7 @@ angular.module('solutionCenter')
         })();
         // added this to generate code so we can run this outside the global scope
         window._nRepData = _nRepData;
+        vm.helpWidgetLoaded = true;
       };
 
       var calcProducts = function (modules) {
@@ -143,7 +145,21 @@ angular.module('solutionCenter')
         return products;
       };
 
-      loadHelpWidget(vm.modules);
+      if (!vm.modules) {
+        // if no modules provided, load the help widget with just default product
+        loadHelpWidget();
+      } else {
+        // otherwise, wait for modules to be populated then load the widget
+        $scope.$watch(
+          function () {
+            return vm.modules;
+          },
+          function () {
+            if (vm.modules && vm.modules.length > 0 && !vm.helpWidgetLoaded) {
+              loadHelpWidget(vm.modules);
+            }
+          });
+      }
     }
   ]);
-angular.module("solutionCenter").run(["$templateCache", function($templateCache) {$templateCache.put("solution-center-header.html","<header class=\"header\" click-outside=\"headerCtrl.modulesMenuVisible=false; headerCtrl.brandSwitcherVisible=false; headerCtrl.userMenuVisible=false\"><div class=\"logo-container\"><div title=\"Logo\" class=\"logo logo--large\"></div><div title=\"Logo\" class=\"logo logo--small\"></div></div><div class=\"menu-toggle\" ng-click=\"headerCtrl.toggleMenu(\'modules\')\" ng-if=\"headerCtrl.modules\"><i class=\"dc-icon dc-icon--menu dc-icon--interactive\"></i></div><nav class=\"navigation navigation--global navigation--sub navigation--left\" ng-class=\"{\'shown-mobile\': headerCtrl.modulesMenuVisible}\"><ul class=\"menu\"><li class=\"menu__item\" ng-repeat=\"module in headerCtrl.modules\"><a ng-href=\"{{module.url}}\" class=\"menu__link\">{{module.name}}</a></li></ul></nav><a href=\"\" ng-click=\"headerCtrl.toggleMenu(\'brand\')\" class=\"brand-switcher\" title=\"Switch Brand\"><span class=\"brand-switcher__brand-name\">{{headerCtrl.brand.name}}</span></a><nav class=\"navigation navigation--sub navigation--right\" ng-show=\"headerCtrl.brandSwitcherVisible\" ng-class=\"{shown: headerCtrl.brandSwitcherVisible}\"><ul class=\"menu\"><li class=\"menu__item\"><a ng-href=\"{{headerCtrl.SOLUTION_CENTER_URL}}brands/{{headerCtrl.brand.id}}\" class=\"menu__link\">{{headerCtrl.brand.name}} Account</a></li><li class=\"menu__item\"><a href=\"{{headerCtrl.SOLUTION_CENTER_URL}}brands\" class=\"menu__link\">Switch Brand</a></li></ul></nav><div class=\"toggle\" ng-click=\"headerCtrl.toggleMenu(\'user\')\" ng-if=\"headerCtrl.user.name\" title=\"User Account\"><span class=\"user-name\">{{headerCtrl.user.name}}</span> <i class=\"dc-icon dc-icon--user dc-icon--interactive\"></i></div><nav class=\"navigation navigation--sub navigation--right\" ng-show=\"headerCtrl.userMenuVisible\" ng-class=\"{shown: headerCtrl.userMenuVisible}\"><ul class=\"menu\"><li class=\"menu__item\"><a href=\"{{headerCtrl.SOLUTION_CENTER_URL}}account\" class=\"menu__link\">My Account</a></li><li class=\"menu__item\"><a href=\"\" ng-click=\"headerCtrl.logout()\" class=\"menu__link\">Logout</a></li></ul></nav><div class=\"dc-btn-dropdown\" data-click-outside=\"headerCtrl.helpWidgetVisible=false\"><div href=\"\" class=\"toggle\" ng-click=\"headerCtrl.helpWidgetVisible=!headerCtrl.helpWidgetVisible\"><i class=\"dc-icon dc-icon--help dc-icon--interactive\"></i></div><div aria-live=\"polite\" id=\"nanoRepEmbedContainer\" class=\"dc-btn-dropdown__list dc-btn-dropdown__list--down help-widget\" ng-class=\"{ \'visible\': headerCtrl.helpWidgetVisible }\"><i class=\"dc-icon dc-icon--close dc-icon--interactive\" ng-click=\"headerCtrl.helpWidgetVisible=false\"></i></div></div></header>");}]);
+angular.module("solutionCenter").run(["$templateCache", function($templateCache) {$templateCache.put("solution-center-header.html","<header class=\"header\" click-outside=\"headerCtrl.modulesMenuVisible=false; headerCtrl.brandSwitcherVisible=false; headerCtrl.userMenuVisible=false\"><div class=\"logo-container\"><div title=\"Logo\" class=\"logo logo--large\"></div><div title=\"Logo\" class=\"logo logo--small\"></div></div><div class=\"menu-toggle\" ng-click=\"headerCtrl.toggleMenu(\'modules\')\" ng-if=\"headerCtrl.modules\"><i class=\"dc-icon dc-icon--menu dc-icon--interactive\"></i></div><nav class=\"navigation navigation--global navigation--sub navigation--left\" ng-class=\"{\'shown-mobile\': headerCtrl.modulesMenuVisible}\"><ul class=\"menu\"><li class=\"menu__item\" ng-repeat=\"module in headerCtrl.modules\"><a ng-href=\"{{module.url}}\" class=\"menu__link\">{{module.name}}</a></li></ul></nav><a href=\"\" ng-click=\"headerCtrl.toggleMenu(\'brand\')\" class=\"brand-switcher\" title=\"Switch Brand\"><span class=\"brand-switcher__brand-name\">{{headerCtrl.brand.name}}</span></a><nav class=\"navigation navigation--sub navigation--right\" ng-show=\"headerCtrl.brandSwitcherVisible\" ng-class=\"{shown: headerCtrl.brandSwitcherVisible}\"><ul class=\"menu\"><li class=\"menu__item\"><a ng-href=\"{{headerCtrl.SOLUTION_CENTER_URL}}brands/{{headerCtrl.brand.id}}\" class=\"menu__link\">{{headerCtrl.brand.name}} Account</a></li><li class=\"menu__item\"><a href=\"{{headerCtrl.SOLUTION_CENTER_URL}}brands\" class=\"menu__link\">Switch Brand</a></li></ul></nav><div class=\"toggle\" ng-click=\"headerCtrl.toggleMenu(\'user\')\" ng-if=\"headerCtrl.user.name\" title=\"User Account\"><span class=\"user-name\">{{headerCtrl.user.name}}</span> <i class=\"dc-icon dc-icon--user dc-icon--interactive\"></i></div><nav class=\"navigation navigation--sub navigation--right\" ng-show=\"headerCtrl.userMenuVisible\" ng-class=\"{shown: headerCtrl.userMenuVisible}\"><ul class=\"menu\"><li class=\"menu__item\"><a href=\"{{headerCtrl.SOLUTION_CENTER_URL}}account\" class=\"menu__link\">My Account</a></li><li class=\"menu__item\"><a href=\"\" ng-click=\"headerCtrl.logout()\" class=\"menu__link\">Logout</a></li></ul></nav><div class=\"dc-btn-dropdown\" data-click-outside=\"headerCtrl.helpWidgetVisible=false\" ng-show=\"headerCtrl.helpWidgetLoaded\"><div href=\"\" class=\"toggle\" ng-click=\"headerCtrl.helpWidgetVisible=!headerCtrl.helpWidgetVisible\"><i class=\"dc-icon dc-icon--help dc-icon--interactive\"></i></div><div aria-live=\"polite\" id=\"nanoRepEmbedContainer\" class=\"dc-btn-dropdown__list dc-btn-dropdown__list--down help-widget\" ng-class=\"{ \'visible\': headerCtrl.helpWidgetVisible }\"><i class=\"dc-icon dc-icon--close dc-icon--interactive\" ng-click=\"headerCtrl.helpWidgetVisible=false\"></i></div></div></header>");}]);

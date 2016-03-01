@@ -51,7 +51,7 @@
     </ul>
   </nav>
   <!-- HELP -->
-  <div class="dc-btn-dropdown" data-click-outside="headerCtrl.helpWidgetVisible=false">
+  <div class="dc-btn-dropdown" data-click-outside="headerCtrl.helpWidgetVisible=false" ng-show="headerCtrl.helpWidgetLoaded">
     <div href class="toggle" ng-click="headerCtrl.helpWidgetVisible=!headerCtrl.helpWidgetVisible">
       <i class="dc-icon dc-icon--help dc-icon--interactive"></i>
     </div>
