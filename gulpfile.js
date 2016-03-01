@@ -83,7 +83,7 @@ gulp.task('scripts', function() {
     ]))
     .pipe(concat('solution-center-header.js'))
     .pipe(header(config.banner, {
-      timestamp: (new Date()).toISOString(), pkg: config.pkg
+      pkg: config.pkg
     }))
     .pipe(gulp.dest('dist'))
     .pipe(rename({suffix: '.min'}))
