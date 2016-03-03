@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('SolutionCenterHeaderController', [ '$scope',
-    function($scope) {
+  .controller('SolutionCenterHeaderController', [ '$scope', '$window',
+    function($scope, $window) {
 
       var vm = this;
 
@@ -30,6 +30,12 @@ angular.module('solutionCenter')
           vm.userMenuVisible = false;
           vm.brandSwitcherVisible = false;
         }
+      };
+
+      vm.goToPage = function (url) {
+        // close submenus before navigating
+        vm.brandSwitcherVisible = vm.userMenuVisible = vm.modulesMenuVisible = false;
+        $window.location.href = url;
       };
 
       var loadHelpWidget = function(modules) {

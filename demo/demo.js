@@ -24,7 +24,12 @@ var app = angular.module('demo', ['solutionCenter']).controller('demoController'
       {
         "id": 6,
         "name": "Analytics",
-        "url": "zms"
+        "url": "analytics"
+      },
+      {
+        "id": 7,
+        "name": "Google",
+        "url": "https://www.google.com/"
       }
     ];
     vm.url = "/";
