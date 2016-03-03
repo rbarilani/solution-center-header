@@ -7,7 +7,6 @@
 
 .solution-center-header {
   display: flex;
-  display: -webkit-flex;
   align-items: center;
   height: 4.4rem;
   padding: 0.8rem 1.2rem;
@@ -61,11 +60,9 @@
   .solution-center-header .brand-switcher {
     text-align: right;
     margin: 0 3.6rem 0 auto;
-    -webkit-flex-grow: 0;
     flex-grow: 0; }
     @media (max-width: 30em) {
       .solution-center-header .brand-switcher {
-        -webkit-flex-grow: 1;
         flex-grow: 1;
         text-align: center; } }
     .solution-center-header .brand-switcher__brand-name {
@@ -73,7 +70,6 @@
       font-weight: 500;
       color: #4a4a4a; }
   .solution-center-header .navigation--sub {
-    display: -webkit-flex;
     display: flex;
     position: absolute;
     top: 100%;
@@ -123,8 +119,7 @@
     list-style: none;
     padding: 0;
     margin: 0 1.2rem 0 0;
-    display: flex;
-    display: -webkit-flex; }
+    display: flex; }
     .solution-center-header .menu__link {
       margin-left: 2.4rem;
       color: #4a4a4a;
@@ -132,9 +127,7 @@
       display: block;
       cursor: pointer; }
   .solution-center-header .toggle {
-    -webkit-align-items: center;
     align-items: center;
-    display: -webkit-flex;
     display: flex;
     color: #4a4a4a;
     text-align: center; }
