@@ -59,15 +59,15 @@
       color: #1e87cb;
       outline: none; }
   .solution-center-header .brand-switcher {
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    text-align: center; }
-    @media (min-width: 30em) {
+    text-align: right;
+    margin: 0 3.6rem 0 auto;
+    -webkit-flex-grow: 0;
+    flex-grow: 0; }
+    @media (max-width: 30em) {
       .solution-center-header .brand-switcher {
-        text-align: right;
-        margin: 0 3.6rem 0 auto;
-        -webkit-flex-grow: 0;
-        flex-grow: 0; } }
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+        text-align: center; } }
     .solution-center-header .brand-switcher__brand-name {
       text-transform: uppercase;
       font-weight: 500;
@@ -82,9 +82,6 @@
     background: #fff;
     border-top: 1px solid #d1d1d1;
     border-bottom: 1px solid #d1d1d1; }
-    @media (min-width: 30em) {
-      .solution-center-header .navigation--sub {
-        z-index: auto; } }
   .solution-center-header .navigation--right {
     justify-content: flex-end; }
     .solution-center-header .navigation--right.shown .menu__item {
@@ -106,19 +103,22 @@
     .solution-center-header .navigation--left .menu__item:nth-child(n+2) {
       transition: transform 0.1s 0.075s ease-out; }
   .solution-center-header .navigation--global {
-    display: none; }
-    @media (min-width: 30em) {
+    position: static;
+    border: none;
+    width: auto;
+    display: block;
+    transform: none; }
+    .solution-center-header .navigation--global .menu__item {
+      transform: none; }
+    @media (max-width: 30em) {
       .solution-center-header .navigation--global {
-        position: static;
-        border: none;
-        width: auto;
-        display: block;
-        transform: none; }
-        .solution-center-header .navigation--global .menu__item {
-          transform: none; } }
-    .solution-center-header .navigation--global.shown-mobile {
-      display: flex;
-      display: -webkit-flex; }
+        display: none; }
+        .solution-center-header .navigation--global.shown-mobile {
+          display: flex;
+          position: absolute;
+          width: 100%;
+          border-top: 1px solid #d1d1d1;
+          border-bottom: 1px solid #d1d1d1; } }
   .solution-center-header .menu {
     list-style: none;
     padding: 0;

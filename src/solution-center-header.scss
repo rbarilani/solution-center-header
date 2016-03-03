@@ -81,14 +81,15 @@ $dc-font-path: "fonts";
   }
 
   .brand-switcher {
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    text-align: center;
-    @media (min-width: $dc-medium-width) {
-      text-align: right;
-      margin: 0 $dc-space200 0 auto;
-      -webkit-flex-grow: 0;
-      flex-grow: 0;
+    text-align: right;
+    margin: 0 $dc-space200 0 auto;
+    -webkit-flex-grow: 0;
+    flex-grow: 0;
+
+    @media (max-width: $dc-medium-width) {
+      -webkit-flex-grow: 1;
+      flex-grow: 1;
+      text-align: center;
     }
     &__brand-name {
       text-transform: uppercase;
@@ -108,9 +109,6 @@ $dc-font-path: "fonts";
       background: $dc-white;
       border-top: 1px solid $dc-gray60;
       border-bottom: 1px solid $dc-gray60;
-      @media (min-width: $dc-medium-width) {
-        z-index: auto;
-      }
     }
     &--right {
       justify-content: flex-end;
@@ -148,21 +146,25 @@ $dc-font-path: "fonts";
       }
     }
     &--global {
-      display: none;
-      @media (min-width: $dc-medium-width) {
-        position: static;
-        border: none;
-        width: auto;
-        display: block;
+      position: static;
+      border: none;
+      width: auto;
+      display: block;
+      transform: none;
+      .menu__item {
         transform: none;
-        .menu__item {
-          transform: none;
+      }
+      @media (max-width: $dc-medium-width) {
+        display: none;
+        &.shown-mobile {
+          display: flex;
+          position: absolute;
+          width: 100%;
+          border-top: 1px solid $dc-gray60;
+          border-bottom: 1px solid $dc-gray60;
         }
       }
-      &.shown-mobile {
-        display: flex;
-        display: -webkit-flex;
-      }
+
     }
   }
 
