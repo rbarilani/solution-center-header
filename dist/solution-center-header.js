@@ -7,7 +7,7 @@
 
 'use strict';
 
-angular.module('solutionCenter', []).directive('solutionCenterHeader', function ($templateCache) {
+angular.module('solutionCenter', []).directive('solutionCenterHeader', ['$templateCache', function ($templateCache) {
   return {
     scope: {
       brand: '=',
@@ -22,7 +22,8 @@ angular.module('solutionCenter', []).directive('solutionCenterHeader', function 
     controllerAs: 'headerCtrl',
     bindToController: true
   };
-});
+}]);
+
 'use strict';
 
 angular.module('solutionCenter').directive('clickOutside', ['$parse', '$document', function($parse, $document) {
