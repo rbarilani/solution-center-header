@@ -43,6 +43,9 @@
        ng-class="{shown: headerCtrl.userMenuVisible}">
     <ul class="menu">
       <li class="menu__item">
+        <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'terms')" class="menu__link">Terms & Conditions</a>
+      </li>
+      <li class="menu__item">
         <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'account')" class="menu__link">My Account</a>
       </li>
       <li class="menu__item">
