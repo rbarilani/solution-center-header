@@ -54,12 +54,12 @@ describe('solution-center-header', function () {
       });
       it('should have a link for each module', function () {
         angular.forEach(scope.modules, function (module) {
-          expect(element.find('a[href="' + module.url + '"]').length).toEqual(1);
+          expect(element.find('a:contains("' + module.name + '")').length).toEqual(1);
         });
       });
       it('should have a brand switcher with the brand name in it', function () {
         expect(element.find('.brand-switcher').length).toEqual(1);
-        expect(element.find('span:contains(' + scope.brand.name + ')').length).toEqual(1);
+        expect(element.find('span:contains("' + scope.brand.name + '")').length).toEqual(1);
       });
       it('should have a logo container', function () {
         expect(element.find('.logo-container').length).toEqual(1);
