@@ -1,6 +1,8 @@
 # Solution Center Header
 Reusable header for software connecting to the Zalando Solution Center
 
+[![Build Status](https://travis-ci.org/zalando/solution-center-header.svg?branch=master)](https://travis-ci.org/zalando/solution-center-header)
+
 ### Installation
 
 Install via bower
@@ -24,6 +26,7 @@ Load the script in your `<head>` from Bower:
 ```
 
 Or from NPM:
+
 
 ```html
 <script src="../node_modules/solution-center-header/dist/solution-center-header.js"></script>
