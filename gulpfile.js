@@ -138,7 +138,8 @@ gulp.task('karma', ['build', 'html2js'], function (done) {
 
 gulp.task('karma-serve', ['build'], function(done){
   karma.start({
-    configFile: __dirname + '/karma.conf.js'
+    configFile: __dirname + '/karma.conf.js',
+    singleRun: false
   }, done);
 });
 
