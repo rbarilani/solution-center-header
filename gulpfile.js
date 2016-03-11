@@ -17,7 +17,6 @@ var open = require('gulp-open');
 var sass = require('gulp-sass');
 var order = require("gulp-order");
 var flatten = require("gulp-flatten");
-var html2js = require('gulp-html2js');
 
 var config = {
   pkg : JSON.parse(fs.readFileSync('./package.json')),
@@ -127,9 +126,9 @@ gulp.task('open', function(){
 
 gulp.task('jshint-test', function(){
   return gulp.src('./test/**/*.js').pipe(jshint());
-})
+});
 
-gulp.task('karma', ['build', 'html2js'], function (done) {
+gulp.task('karma', ['build'], function (done) {
   karma.start({
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
@@ -141,16 +140,6 @@ gulp.task('karma-serve', ['build'], function(done){
     configFile: __dirname + '/karma.conf.js',
     singleRun: false
   }, done);
-});
-
-
-gulp.task('html2js', function () {
-  gulp.src('src/*.html')
-    .pipe(html2js('angular.js', {
-      adapter: 'angular',
-      name: 'angular-demo'
-    }))
-    .pipe(gulp.dest('dist/'));
 });
 
 function handleError(err) {
