@@ -19,32 +19,32 @@ npm install solution-center-header
 
 ### Usage
 
-Load the script in your `<head>` from Bower:
+1. Load the script in your `<head>` from Bower:
 
-```html
-<script src="../bower_components/solution-center-header/dist/solution-center-header.js"></script>
-```
+    ```html
+    <script src="../bower_components/solution-center-header/dist/solution-center-header.js"></script>
+    ```
+    
+    Or from NPM:
+    
+    
+    ```html
+    <script src="../node_modules/solution-center-header/dist/solution-center-header.js"></script>
+    ```
 
-Or from NPM:
+2. Include the `solutionCenter` module as a dependency in your app.
 
+3. Insert the directive at the top of your app:
 
-```html
-<script src="../node_modules/solution-center-header/dist/solution-center-header.js"></script>
-```
-
-Include the `solutionCenter` module as a dependency in your app.
-
-Insert the directive at the top of each of your views:
-
-```html
-<solution-center-header 
-	user="user"
-	brand="brand"
-	modules="modules" 
-	logout="logout()" 
-	solution-center-url="url">
-</solution-center-header>
-```
+    ```html
+    <solution-center-header 
+        user="user"
+        brand="brand"
+        modules="modules" 
+        logout="logout()" 
+        solution-center-url="url">
+    </solution-center-header>
+    ```
 
 ###Parameters
 
@@ -81,9 +81,13 @@ Follow these steps to ensure you are using the right style for the header:
 
  1. Follow the [usage instructions for the dress code](https://github.com/zalando/dress-code#usage). 
  2. Load the header styles. Add this to your `<head>`:
+ 
     ```<link rel="stylesheet" href="../bower_components/solution-center-header/dist/solution-center header.css">```
+    
     Or for NPM:
+    
     ```<link rel="stylesheet" href="../node_modules/solution-center-header/dist/solution-center header.css">```
+    
  3. For sizing, be sure the header is inside a `<body>` with class `dc-body`, and your `<html>` has class `dc-html`. 
 
  
