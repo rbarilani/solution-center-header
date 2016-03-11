@@ -16,22 +16,15 @@
   .solution-center-header .logo-container {
     max-height: 2rem; }
   .solution-center-header .logo {
-    max-height: 2rem;
-    padding-bottom: 2px; }
+    max-height: 2rem; }
     .solution-center-header .logo ~ * {
       margin-left: 2.4rem; }
     .solution-center-header .logo--large {
-      background: url("img/logo.svg") no-repeat;
-      background-size: contain;
-      height: 1.8rem;
-      width: 9rem; }
+      max-width: 90px; }
       @media (max-width: 30em) {
         .solution-center-header .logo--large {
           display: none; } }
     .solution-center-header .logo--small {
-      height: 1.4rem;
-      width: 1.4rem;
-      background: url("img/logo--no-text.svg") no-repeat;
       margin-left: 0;
       display: none; }
       @media (max-width: 30em) {
