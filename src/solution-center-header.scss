@@ -22,25 +22,18 @@ $dc-font-path: "fonts";
 
   .logo {
     max-height: $dc-touch-size - $dc-space150;
-    padding-bottom: 2px;
 
     ~ * {
       margin-left: $dc-space150;
     }
 
     &--large {
-      background: url('img/logo.svg') no-repeat;
-      background-size: contain;
-      height: 1.8rem;
-      width: 9rem;
+      max-width: 90px;
       @media (max-width: $dc-medium-width) {
         display: none;
       }
     }
     &--small {
-      height: 1.4rem;
-      width: 1.4rem;
-      background: url('img/logo--no-text.svg') no-repeat;
       margin-left: 0;
       display: none;
       @media (max-width: $dc-medium-width) {
