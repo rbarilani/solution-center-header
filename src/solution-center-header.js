@@ -7,7 +7,8 @@ angular.module('solutionCenter', []).directive('solutionCenterHeader', ['$templa
       user: '=',
       modules: '=',
       logout: '&',
-      solutionCenterUrl: '@'
+      solutionCenterUrl: '@',
+      logoLink: '@'
     },
     restrict: 'E',
     template: $templateCache.get('solution-center-header.html'),

@@ -40,6 +40,9 @@ $dc-font-path: "fonts";
         display: block;
       }
     }
+    &--clickable {
+      cursor: pointer;
+    }
   }
 
   .menu-toggle {

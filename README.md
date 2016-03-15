@@ -42,7 +42,8 @@ npm install solution-center-header
         brand="brand"
         modules="modules" 
         logout="logout()" 
-        solution-center-url="url">
+        solution-center-url="url"
+        logo-link="url>
     </solution-center-header>
     ```
 
@@ -72,6 +73,10 @@ All parameters are optional. The Zalando logo and the help widget always appear.
  - **solution-center-url**:  A URL override for the solution center. This URL is used to construct the links for the user account, brand account, and brand switcher pages. The URL should have a trailing `/`. If no URL is provided, the solution center production URL is used by default.
 
     ```solution-center-url = "https://www.example.com/```
+    
+ - **logo-link**:  A URL to which redirect when clicking on the logo. If no URL is provided, the logo behaves as not clickable.
+    
+    ```logo-link = "https://www.example.com/```
 
 ### Style
 

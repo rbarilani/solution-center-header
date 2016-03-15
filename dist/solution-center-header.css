@@ -30,6 +30,8 @@
       @media (max-width: 30em) {
         .solution-center-header .logo--small {
           display: block; } }
+    .solution-center-header .logo--clickable {
+      cursor: pointer; }
   .solution-center-header .menu-toggle {
     margin-top: 4px;
     display: none; }
