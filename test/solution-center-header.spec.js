@@ -89,6 +89,28 @@ describe('solution-center-header', function () {
       it('calculates products and sets them to the nanorep API', function () {
         expect(window._nRepData.customParams.product).toEqual(['General','Dummy1','Dummy2']);
       });
+      it('constructs the user\'s name from the first and last names in the user object', function () {
+        scope.user = { firstName: 'John', lastName: 'Doe' };
+        element = createDirective();
+        var isolatedScope = element.isolateScope();
+        expect(isolatedScope.headerCtrl.username).toEqual('John Doe');
+      });
+      it('falls back to using the name property in the user object if no firstname or lastname', function () {
+        scope.user = { firstName: 'John', name: 'John Fallback' }; // no lastname
+        element = createDirective();
+        var isolatedScope = element.isolateScope();
+        expect(isolatedScope.headerCtrl.username).toEqual('John Fallback');
+        scope.user = { lastName: 'Doe', name: 'John Fallback' }; // no firstname
+        element = createDirective();
+        var isolatedScope = element.isolateScope();
+        expect(isolatedScope.headerCtrl.username).toEqual('John Fallback');
+      });
+      it('does not set the username if no first or lastname and no name found in user', function () {
+        scope.user = { firstName: 'John' }; // no lastname, no name
+        element = createDirective();
+        var isolatedScope = element.isolateScope();
+        expect(isolatedScope.headerCtrl.username).toBeUndefined();
+      });
     });
   });
   describe('interaction', function () {

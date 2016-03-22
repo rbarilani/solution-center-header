@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('SolutionCenterHeaderController', [ '$scope', '$window',
-    function($scope, $window) {
+  .controller('SolutionCenterHeaderController', ['$scope', '$window',
+    function ($scope, $window) {
 
       var vm = this;
 
@@ -13,6 +13,7 @@ angular.module('solutionCenter')
       vm.modulesMenuVisible = false;
       vm.helpWidgetVisible = false;
       vm.helpWidgetLoaded = false;
+      vm.username = (vm.user.firstName && vm.user.lastName) ? vm.user.firstName + " " + vm.user.lastName : vm.user.name;
 
       vm.toggleMenu = function (menuToToggle) {
         if (menuToToggle === 'brand') {
@@ -38,7 +39,7 @@ angular.module('solutionCenter')
         $window.location.href = url;
       };
 
-      var loadHelpWidget = function(modules) {
+      var loadHelpWidget = function (modules) {
         // NANOREP EMBEDDED WIDGET -- DO NOT MODIFY CODE (except API section)
         // generated at my.nanorep.com > Guided Journeys > Touchpoints > Embedded Widget > get the code
         var _nRepData = window._nRepData || [];
@@ -83,7 +84,7 @@ angular.module('solutionCenter')
 
       var calcProducts = function (modules) {
         var products = [vm.HELP_PRODUCT_GENERAL];
-        angular.forEach(modules, function(module) {
+        angular.forEach(modules, function (module) {
           if (module.name) {
             products.push(module.name);
           }

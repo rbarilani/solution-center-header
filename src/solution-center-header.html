@@ -35,8 +35,8 @@
     </ul>
   </nav>
   <!-- USER MENU -->
-  <div class="toggle" ng-click="headerCtrl.toggleMenu('user')" ng-if="headerCtrl.user.name" title="User Account">
-    <span class="user-name">{{headerCtrl.user.name}}</span>
+  <div class="toggle" ng-click="headerCtrl.toggleMenu('user')" ng-if="headerCtrl.username" title="User Account">
+    <span class="user-name">{{headerCtrl.username}}</span>
     <i class="dc-icon dc-icon--user dc-icon--interactive"></i>
   </div>
   <nav class="navigation navigation--sub navigation--right" ng-show="headerCtrl.userMenuVisible"
