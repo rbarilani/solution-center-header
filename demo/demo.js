@@ -2,7 +2,10 @@ var app = angular.module('demo', ['solutionCenter']).controller('demoController'
   function($q) {
     var vm = this;
     vm.brand = { name: "Lacoste", id: 19 };
-    vm.user = { name: "Colin Howald" };
+    vm.user = {
+      firstName: "Colin",
+      lastName: "Howald"
+    };
     vm.modules = [];
 
     var modules = [
