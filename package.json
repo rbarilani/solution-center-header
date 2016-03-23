@@ -34,7 +34,7 @@
     "karma-firefox-launcher": "^0.1.3",
     "karma-jasmine": "^0.1.5",
     "mversion": "^1.6.0",
-    "dress-code": "git+https://github.com/zalando/dress-code.git"
+    "dress-code": "^1.3.0-alpha"
   },
   "directories": {},
   "homepage": "https://github.com/zalando/solution-center-header",
