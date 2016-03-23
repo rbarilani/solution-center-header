@@ -75,12 +75,9 @@ All parameters are optional. The Zalando logo and the help widget always appear.
 
 ### Style
 
-The solution center header is intended to be used with the [dress code](https://github.com/zalando/dress-code) style. That package is included as a dependency.
+The solution center header uses [dress code](https://github.com/zalando/dress-code) styles by default. To get the style:
 
-Follow these steps to ensure you are using the right style for the header:
-
- 1. Follow the [usage instructions for the dress code](https://github.com/zalando/dress-code#usage). 
- 2. Load the header styles. Add this to your `<head>`:
+ 1. Add this to your `<head>`:
  
     ```<link rel="stylesheet" href="../bower_components/solution-center-header/dist/solution-center header.css">```
     
@@ -88,7 +85,7 @@ Follow these steps to ensure you are using the right style for the header:
     
     ```<link rel="stylesheet" href="../node_modules/solution-center-header/dist/solution-center header.css">```
     
- 3. For sizing, be sure the header is inside a `<body>` with class `dc-body`, and your `<html>` has class `dc-html`. 
+ 2. For icon and font sizing, apply class `dc-html` to `<html>` and `dc-body` to `<body>`. 
 
  
 	 

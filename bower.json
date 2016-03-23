@@ -34,10 +34,10 @@
   ],
   "devDependencies": {
     "jquery": "~2.1.1",
-    "angular-mocks": "^1.2.26"
+    "angular-mocks": "^1.2.26",
+    "dress-code": "https://github.com/zalando/dress-code-bower.git"
   },
   "dependencies": {
-    "angular": "^1.4.0",
-    "dress-code": "https://github.com/zalando/dress-code-bower.git"
+    "angular": "^1.4.0"
   }
 }

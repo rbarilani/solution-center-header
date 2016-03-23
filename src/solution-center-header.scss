@@ -1,5 +1,9 @@
 @import "../bower_components/dress-code/sass/dress-code";
 $dc-font-path: "fonts";
+@include dc-normalize;
+@include dc-typography-selectors;
+@include dc-dropdown-selectors;
+@include dc-icon-selectors;
 
 //  ---------------------------------------------------------------------------
 //
