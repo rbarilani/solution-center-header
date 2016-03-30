@@ -72,7 +72,8 @@
     width: 100%;
     background: #fff;
     border-top: 1px solid #d1d1d1;
-    border-bottom: 1px solid #d1d1d1; }
+    border-bottom: 1px solid #d1d1d1;
+    z-index: 998; }
   .solution-center-header .navigation--right {
     justify-content: flex-end; }
     .solution-center-header .navigation--right.shown .menu__item {

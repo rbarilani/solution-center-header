@@ -101,11 +101,12 @@ $dc-font-path: "fonts";
       background: $dc-white;
       border-top: 1px solid $dc-gray60;
       border-bottom: 1px solid $dc-gray60;
+      z-index: 998;
     }
     &--right {
       justify-content: flex-end;
       &.shown {
-        & .menu__item {
+        & .menu__item {git
           transform: translateX(0);
         }
       }

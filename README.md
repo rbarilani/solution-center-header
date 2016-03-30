@@ -52,7 +52,7 @@ All parameters are optional. The Zalando logo and the help widget always appear.
 
  - **user**: A user object. Controls the display of the user name with submenu allowing access to a user account page and logout.
  
-    `user = { name: "name"}`
+    `user = { firstName: "John", lastName: "Doe }` OR `{ name: "John Doe" }`
  
  - **brand**: A brand object. Controls the display of the brand switcher with a submenu allowing access to the brand page and switching to another brand.
  
@@ -62,7 +62,7 @@ All parameters are optional. The Zalando logo and the help widget always appear.
  
      ```
      modules = [ { name: "name", url: "example.com" }, 
-                    { name: "name", url: "example.com" } ]
+                 { name: "name", url: "example.com" } ]
      ```
  
  - **logout**: A function that is called when a user clicks the logout link.
