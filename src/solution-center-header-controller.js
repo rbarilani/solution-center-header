@@ -34,6 +34,9 @@ angular.module('solutionCenter')
       };
 
       vm.goToPage = function (url) {
+        if (!url) {
+          return;
+        }
         // close submenus before navigating
         vm.brandSwitcherVisible = vm.userMenuVisible = vm.modulesMenuVisible = false;
         $window.location.href = url;
