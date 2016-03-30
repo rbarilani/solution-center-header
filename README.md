@@ -42,8 +42,7 @@ npm install solution-center-header
         brand="brand"
         modules="modules" 
         logout="logout()" 
-        solution-center-url="url"
-        logo-link="url>
+        solution-center-url="url">
     </solution-center-header>
     ```
 
