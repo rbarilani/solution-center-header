@@ -106,7 +106,7 @@ $dc-font-path: "fonts";
     &--right {
       justify-content: flex-end;
       &.shown {
-        & .menu__item {git
+        & .menu__item {
           transform: translateX(0);
         }
       }
