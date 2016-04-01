@@ -144,6 +144,7 @@ $dc-font-path: "fonts";
       width: auto;
       display: block;
       transform: none;
+      z-index: auto;
       .menu__item {
         transform: none;
       }
@@ -155,6 +156,7 @@ $dc-font-path: "fonts";
           width: 100%;
           border-top: 1px solid $dc-gray60;
           border-bottom: 1px solid $dc-gray60;
+          z-index: 998;
         }
       }
 
