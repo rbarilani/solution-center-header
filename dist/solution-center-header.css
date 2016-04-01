@@ -99,7 +99,8 @@
     border: none;
     width: auto;
     display: block;
-    transform: none; }
+    transform: none;
+    z-index: auto; }
     .solution-center-header .navigation--global .menu__item {
       transform: none; }
     @media (max-width: 30em) {
@@ -110,7 +111,8 @@
           position: absolute;
           width: 100%;
           border-top: 1px solid #d1d1d1;
-          border-bottom: 1px solid #d1d1d1; } }
+          border-bottom: 1px solid #d1d1d1;
+          z-index: 998; } }
   .solution-center-header .menu {
     list-style: none;
     padding: 0;
