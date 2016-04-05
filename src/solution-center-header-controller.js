@@ -6,7 +6,7 @@ angular.module('solutionCenter')
 
       var vm = this;
 
-      vm.SOLUTION_CENTER_URL = vm.solutionCenterUrl || "https://www.solutions.zalando.com/#/";
+      vm.solutionCenterUrl = vm.solutionCenterUrl || "https://www.solutions.zalando.com/#/";
       vm.HELP_PRODUCT_GENERAL = 'General';
       vm.brandSwitcherVisible = false;
       vm.userMenuVisible = false;

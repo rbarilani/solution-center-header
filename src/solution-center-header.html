@@ -1,7 +1,7 @@
 <header class="solution-center-header" click-outside="headerCtrl.modulesMenuVisible=false; headerCtrl.brandSwitcherVisible=false;
                                       headerCtrl.userMenuVisible=false">
   <!-- LOGO -->
-  <div class="logo-container" ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL)">
+  <div class="logo-container" ng-click="headerCtrl.goToPage(headerCtrl.solutionCenterUrl)">
     <img src="https://s3-eu-west-1.amazonaws.com/cdn.solutions.zalando.com/zalando-icons/logo.svg" alt="Logo"
          class="logo logo--large logo--clickable" />
     <img src="https://s3-eu-west-1.amazonaws.com/cdn.solutions.zalando.com/zalando-icons/logo--no-text.svg" alt="Logo"
@@ -27,12 +27,12 @@
        ng-class="{shown: headerCtrl.brandSwitcherVisible}">
     <ul class="menu">
       <li class="menu__item">
-        <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'brands/' + headerCtrl.brand.id)" class="menu__link">
+        <a href ng-click="headerCtrl.goToPage(headerCtrl.solutionCenterUrl + 'brands/' + headerCtrl.brand.id)" class="menu__link">
             {{headerCtrl.brand.name}} Account
         </a>
       </li>
       <li class="menu__item">
-        <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'brands')" class="menu__link">Switch Brand</a>
+        <a href ng-click="headerCtrl.goToPage(headerCtrl.solutionCenterUrl + 'brands')" class="menu__link">Switch Brand</a>
       </li>
     </ul>
   </nav>
@@ -45,10 +45,10 @@
        ng-class="{shown: headerCtrl.userMenuVisible}">
     <ul class="menu">
       <li class="menu__item">
-        <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'terms')" class="menu__link">Terms & Conditions</a>
+        <a href ng-click="headerCtrl.goToPage(headerCtrl.solutionCenterUrl + 'terms')" class="menu__link">Terms & Conditions</a>
       </li>
       <li class="menu__item">
-        <a href ng-click="headerCtrl.goToPage(headerCtrl.SOLUTION_CENTER_URL + 'account')" class="menu__link">My Account</a>
+        <a href ng-click="headerCtrl.goToPage(headerCtrl.solutionCenterUrl + 'account')" class="menu__link">My Account</a>
       </li>
       <li class="menu__item">
         <a href ng-click="headerCtrl.logout()" class="menu__link">Logout</a>

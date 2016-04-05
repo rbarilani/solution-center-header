@@ -35,7 +35,7 @@ var app = angular.module('demo', ['solutionCenter']).controller('demoController'
         "url": "https://www.google.com/"
       }
     ];
-    vm.url = "/";
+    var url = "https://usf-stage.norris.zalan.do/#/";
     vm.logout = function() {
       console.log('logout clicked');
     };
@@ -48,8 +48,20 @@ var app = angular.module('demo', ['solutionCenter']).controller('demoController'
       });
     };
 
+    vm.getURL = function () {
+      return $q(function(resolve) {
+        setTimeout(function() {
+          resolve(url);
+        }, 1000);
+      });
+    };
+
     vm.getModules().then(function(response) {
       vm.modules = response;
+    });
+
+    vm.getURL().then(function(response) {
+      vm.url = response;
     });
   }
 ]);
