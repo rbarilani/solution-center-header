@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('solutionCenter')
-  .controller('SolutionCenterHeaderController', ['$scope', '$window',
-    function ($scope, $window) {
+  .controller('SolutionCenterHeaderController', ['$scope', '$window', '$attrs',
+    function ($scope, $window, $attrs) {
 
       var vm = this;
 
@@ -95,12 +95,12 @@ angular.module('solutionCenter')
         return products;
       };
 
-      if (!vm.modules) {
+      if (!$attrs.modules) {
         // if no modules provided, load the help widget with just default product
         loadHelpWidget();
       } else {
         // otherwise, wait for modules to be populated then load the widget
-        $scope.$watch(
+        $scope.$watchCollection(
           function () {
             return vm.modules;
           },
