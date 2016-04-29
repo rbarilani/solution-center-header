@@ -60,7 +60,7 @@ gulp.task('scripts', function() {
              quotes: true
             }))
       .pipe(templateCache({module: 'solutionCenter'}));
-  };
+  }
 
   function buildDistJS(){
     return gulp.src('src/*.js')
@@ -70,7 +70,7 @@ gulp.task('scripts', function() {
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'));
-  };
+  }
 
   es.merge(buildDistJS(), buildTemplates())
     .pipe(plumber({
@@ -145,7 +145,7 @@ gulp.task('karma-serve', ['build'], function(done){
 function handleError(err) {
   console.log(err.toString());
   this.emit('end');
-};
+}
 
 gulp.task('build', ['scripts', 'styles', 'fonts', 'images']);
 gulp.task('serve', ['build', 'connect', 'watch', 'open']);

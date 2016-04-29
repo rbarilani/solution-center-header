@@ -4,8 +4,8 @@
     "url": "https://github.com/zalando/solution-center-header/issues"
   },
   "dependencies": {
-    "dress-code": "git+https://github.com/zalando/dress-code.git",
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "dress-code": "^2.0.0-alpha"
   },
   "description": "Reusable header for the Zalando Solution Center",
   "devDependencies": {
