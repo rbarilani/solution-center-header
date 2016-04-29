@@ -37,7 +37,7 @@
     "angular-mocks": "^1.2.26"
   },
   "dependencies": {
-    "angular": "^1.4.0",
+    "angular": "^1.5.0",
     "dress-code": "https://github.com/zalando/dress-code-bower.git"
   }
 }
